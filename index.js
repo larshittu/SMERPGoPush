@@ -5,7 +5,8 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+//const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT
 
 // Middleware
 app.use(bodyParser.json());
