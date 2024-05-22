@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const axios = require('axios');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger');
+const cors = require('cors');  // Importing cors
 
 const app = express();
 //const PORT = process.env.PORT || 3000;
@@ -10,6 +11,7 @@ const PORT = process.env.PORT
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors());  // Using cors middleware
 
 // Swagger setup
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
